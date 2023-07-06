@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('index');
+    return view('index');
 });
 
 Route::prefix('produtos')->group(function(){
     Route::get('/',[ProdutosController::class, 'index'])->name('produtos.index');
+    Route::delete('/',[ProdutosController::class, 'delete'])->name('produtos.delete');
 });

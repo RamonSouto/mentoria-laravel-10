@@ -5,8 +5,8 @@
         <h1 class="h2">Produtos</h1>
     </div>
     <div>
-        <form action="" method="get">
-            <input type="text" name="" id="" placeholder="Digite o nome">
+        <form action="{{ route('produtos.index') }}" method="get">
+            <input type="text" name="pesquisar" id="" placeholder="Digite o nome">
             <button>Pesquisar</button>
             <a type="button" href="" class="btn btn-success float-end">Incluir Produto</a>
         </form>
@@ -14,27 +14,31 @@
         <h2>Lista de Produtos</h2>
 
         <div class="table-responsive small">
-            <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Valor</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($findProdutos as $produto)
+            @if ($findProdutos->isEmpty())
+                <p>Não existe dados</p>
+            @else    
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($findProdutos as $produto)
                         <tr>
                             <td>{{$produto->nome}}</td>
                             <td>{{'R$ ' . number_format($produto->valor,2, ',','.')}}</td>
                             <td>
                                 <a href="#" class="btn btn-sm btn-light">Editar</a>
-                                <a href="#" class="btn btn-sm btn-danger">Excluir</a>
+                                <a href="{{ route('produtos.delete') }}" class="btn btn-sm btn-danger">Excluir</a>
                             </td>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                        @endforeach
+                    </tbody>
+                </table>
+            @endif
         </div>
     </div>
 @endsection
