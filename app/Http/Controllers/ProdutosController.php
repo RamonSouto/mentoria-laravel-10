@@ -24,7 +24,7 @@ class ProdutosController extends Controller
         $id = $request->id;
         $subRegistro = Produto::find($id);
         $subRegistro->delete();
-
+        Toastr::success('Produto excluido com sucesso');
         return response()->json(['success'=> true], 200);
     }
 
@@ -34,7 +34,7 @@ class ProdutosController extends Controller
             $componentes = new Componentes();
             $data['valor'] = $componentes->formatarMascaraDinheiroDecimal($data['valor']);
             Produto::create($data);
-            Toastr::success('Gravado com sucesso');
+            Toastr::success('Produto cadastrado com sucesso');
             return redirect()->route('produtos.index');
         }
 
@@ -50,7 +50,7 @@ class ProdutosController extends Controller
             $data['valor'] = $componentes->formatarMascaraDinheiroDecimal($data['valor']);
             $buscaRegistro = Produto::find($id);
             $buscaRegistro->update($data);
-
+            Toastr::success('Produto alterado com sucesso');
             return redirect()->route('produtos.index');
         }
 
