@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ route('vendas.index') }}">
                         <span data-feather="file" class="align-text-bottom"></span>
                         Venda
                     </a>

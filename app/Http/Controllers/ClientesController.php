@@ -46,8 +46,6 @@ class ClientesController extends Controller
         if($request->method()==="PUT"){
 
             $data = $request->all();
-            $componentes = new Componentes();
-            $data['valor'] = $componentes->formatarMascaraDinheiroDecimal($data['valor']);
             $buscaRegistro = Cliente::find($id);
             $buscaRegistro->update($data);
 

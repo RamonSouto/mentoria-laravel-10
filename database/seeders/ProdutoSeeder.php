@@ -15,6 +15,6 @@ class ProdutoSeeder extends Seeder
                 'nome' => 'Arroz',
                 'valor' => '20.00'
             ]
-            );
+        );
     }
 }

@@ -14,6 +14,7 @@ class ProdutosController extends Controller
     {
         $this->produto = $produto;
     }
+
     public function index(Request $request){
         $pesquisar = $request->pesquisar;
         $findProdutos = $this->produto->getProdutosPesquisarIndex(search: $pesquisar ?? '');

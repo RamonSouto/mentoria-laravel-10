@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" data-bs-theme="auto">
+<html lang="pt-BR">
     <head>
 
         <meta charset="utf-8">
@@ -126,7 +126,6 @@
         </div>
 
         @yield('scripts')
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
