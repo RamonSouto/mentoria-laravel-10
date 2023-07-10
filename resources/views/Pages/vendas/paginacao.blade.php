@@ -35,7 +35,7 @@
                             <td>{{$venda->produto->nome}}</td>
                             <td>{{'R$ ' . number_format($venda->produto->valor,2, ',','.')}}</td>
                             <td>
-                                <a href="#" class="btn btn-sm btn-light">Enviar E-mail</a>
+                                <a href="{{ route('enviaComprovantePorEmail.venda', $venda->id) }}" class="btn btn-sm btn-light">Enviar E-mail</a>
                             </td>
                         </tr>
                         @endforeach
