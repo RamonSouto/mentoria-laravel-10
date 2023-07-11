@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use App\Models\Produto;
+use App\Models\User;
 use App\Models\Venda;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,6 @@ class DashboardController extends Controller
     }
 
     public function buscaTotalUsuarioCadastrado(): int {
-        return 1;
+        return User::all()->count();
     }
 }
